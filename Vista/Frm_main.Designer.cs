@@ -31,7 +31,6 @@ namespace Vista
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItem_proveedores = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_marca = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMMarcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_productos = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,26 +49,18 @@ namespace Vista
             this.ToolStripMenuItem_usuarios});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // ToolStripMenuItem_proveedores
             // 
-            this.ToolStripMenuItem_proveedores.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aBMProveedoresToolStripMenuItem});
             this.ToolStripMenuItem_proveedores.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.ToolStripMenuItem_proveedores.ForeColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_proveedores.Name = "ToolStripMenuItem_proveedores";
             this.ToolStripMenuItem_proveedores.Size = new System.Drawing.Size(103, 24);
             this.ToolStripMenuItem_proveedores.Text = "Proveedores";
             this.ToolStripMenuItem_proveedores.Click += new System.EventHandler(this.ToolStripMenuItem_proveedores_Click);
-            // 
-            // aBMProveedoresToolStripMenuItem
-            // 
-            this.aBMProveedoresToolStripMenuItem.Name = "aBMProveedoresToolStripMenuItem";
-            this.aBMProveedoresToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
-            this.aBMProveedoresToolStripMenuItem.Text = "ABM-Proveedores";
             // 
             // ToolStripMenuItem_marca
             // 
@@ -120,16 +111,15 @@ namespace Vista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1283, 651);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.White;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-//            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSistema_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -142,7 +132,6 @@ namespace Vista
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_productos;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_proveedores;
-        private System.Windows.Forms.ToolStripMenuItem aBMProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_marca;
         private System.Windows.Forms.ToolStripMenuItem aBMMarcasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMProductosToolStripMenuItem;

@@ -19,22 +19,22 @@ namespace Controlador
         // Validacion de Usuario y Password.
         public bool validarUsuarioPassword()
         {
-            return UsuarioBD.validarUsuarioPassword(this.password);         
+            return UsuarioDB.validarUsuarioPassword(this.password);         
         }
         //Cambiar
         public String cargarUsuario()
         {
-            return UsuarioBD.cargarUsuario();
+            return "Hola";// UsuarioBD.cargarUsuario();
         }
         //Cambiar
         public string passwordActual()
         {
-            return UsuarioBD.cargarPassword();
+            return "hola"; //UsuarioBD.cargarPassword();
         }
         //Cambiar
         public void modificarUsuario()
         {
-            UsuarioBD.modificarUsuario(this.usuario, this.password);
+            //UsuarioBD.modificarUsuario(this.usuario, this.password);
         }
     }
 }

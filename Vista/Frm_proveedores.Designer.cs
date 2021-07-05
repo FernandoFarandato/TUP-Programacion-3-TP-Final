@@ -33,12 +33,14 @@ namespace Vista
             this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_calle = new System.Windows.Forms.Label();
             this.lbl_telefono = new System.Windows.Forms.Label();
-            this.rb_minorsita = new System.Windows.Forms.RadioButton();
-            this.rb_mayorsita = new System.Windows.Forms.RadioButton();
-            this.datosMinorista = new System.Windows.Forms.GroupBox();
+            this.rb_minorista = new System.Windows.Forms.RadioButton();
+            this.rb_mayorista = new System.Windows.Forms.RadioButton();
+            this.gb_minorista = new System.Windows.Forms.GroupBox();
             this.lbl_dni = new System.Windows.Forms.Label();
             this.txt_dni = new System.Windows.Forms.TextBox();
-            this.datosMayorista = new System.Windows.Forms.GroupBox();
+            this.gb_mayorista = new System.Windows.Forms.GroupBox();
+            this.lbl_porcentage_ganancia = new System.Windows.Forms.Label();
+            this.txt_porcentage_ganancia = new System.Windows.Forms.TextBox();
             this.lbl_ibb = new System.Windows.Forms.Label();
             this.txt_ibb = new System.Windows.Forms.TextBox();
             this.lbl_cuit = new System.Windows.Forms.Label();
@@ -52,20 +54,6 @@ namespace Vista
             this.txt_provincia = new System.Windows.Forms.TextBox();
             this.txt_numero = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btoGuardar = new System.Windows.Forms.Button();
-            this.btoEliminar = new System.Windows.Forms.Button();
-            this.btoSalir = new System.Windows.Forms.Button();
-            this.btn_limpiar_datos = new System.Windows.Forms.Button();
-            this.lbl_nombre = new System.Windows.Forms.Label();
-            this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lbl_titulo_1 = new System.Windows.Forms.Label();
-            this.txt_porcentage_ganancia = new System.Windows.Forms.TextBox();
-            this.lbl_porcentage_ganancia = new System.Windows.Forms.Label();
-            this.gb_operaciones = new System.Windows.Forms.GroupBox();
-            this.rb_guardar = new System.Windows.Forms.RadioButton();
-            this.rb_eliminar = new System.Windows.Forms.RadioButton();
-            this.rb_actualizar = new System.Windows.Forms.RadioButton();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.porcentage_ganancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,8 +65,20 @@ namespace Vista
             this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datosMinorista.SuspendLayout();
-            this.datosMayorista.SuspendLayout();
+            this.btn_guardar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_salir = new System.Windows.Forms.Button();
+            this.btn_limpiar_datos = new System.Windows.Forms.Button();
+            this.lbl_nombre = new System.Windows.Forms.Label();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.btn_actualizar = new System.Windows.Forms.Button();
+            this.lbl_titulo_1 = new System.Windows.Forms.Label();
+            this.gb_operaciones = new System.Windows.Forms.GroupBox();
+            this.rb_actualizar = new System.Windows.Forms.RadioButton();
+            this.rb_eliminar = new System.Windows.Forms.RadioButton();
+            this.rb_guardar = new System.Windows.Forms.RadioButton();
+            this.gb_minorista.SuspendLayout();
+            this.gb_mayorista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gb_operaciones.SuspendLayout();
             this.SuspendLayout();
@@ -124,44 +124,46 @@ namespace Vista
             this.lbl_telefono.TabIndex = 16;
             this.lbl_telefono.Text = "Telefono";
             // 
-            // rb_minorsita
+            // rb_minorista
             // 
-            this.rb_minorsita.AutoSize = true;
-            this.rb_minorsita.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.rb_minorsita.ForeColor = System.Drawing.Color.White;
-            this.rb_minorsita.Location = new System.Drawing.Point(35, 283);
-            this.rb_minorsita.Name = "rb_minorsita";
-            this.rb_minorsita.Size = new System.Drawing.Size(87, 22);
-            this.rb_minorsita.TabIndex = 7;
-            this.rb_minorsita.TabStop = true;
-            this.rb_minorsita.Text = "Minorista";
-            this.rb_minorsita.UseVisualStyleBackColor = true;
+            this.rb_minorista.AutoSize = true;
+            this.rb_minorista.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.rb_minorista.ForeColor = System.Drawing.Color.White;
+            this.rb_minorista.Location = new System.Drawing.Point(35, 283);
+            this.rb_minorista.Name = "rb_minorista";
+            this.rb_minorista.Size = new System.Drawing.Size(87, 22);
+            this.rb_minorista.TabIndex = 7;
+            this.rb_minorista.TabStop = true;
+            this.rb_minorista.Text = "Minorista";
+            this.rb_minorista.UseVisualStyleBackColor = true;
+            this.rb_minorista.CheckedChanged += new System.EventHandler(this.rb_minorista_CheckedChanged);
             // 
-            // rb_mayorsita
+            // rb_mayorista
             // 
-            this.rb_mayorsita.AutoSize = true;
-            this.rb_mayorsita.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.rb_mayorsita.ForeColor = System.Drawing.Color.White;
-            this.rb_mayorsita.Location = new System.Drawing.Point(35, 396);
-            this.rb_mayorsita.Name = "rb_mayorsita";
-            this.rb_mayorsita.Size = new System.Drawing.Size(91, 22);
-            this.rb_mayorsita.TabIndex = 20;
-            this.rb_mayorsita.TabStop = true;
-            this.rb_mayorsita.Text = "Mayorista";
-            this.rb_mayorsita.UseVisualStyleBackColor = true;
+            this.rb_mayorista.AutoSize = true;
+            this.rb_mayorista.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.rb_mayorista.ForeColor = System.Drawing.Color.White;
+            this.rb_mayorista.Location = new System.Drawing.Point(35, 396);
+            this.rb_mayorista.Name = "rb_mayorista";
+            this.rb_mayorista.Size = new System.Drawing.Size(91, 22);
+            this.rb_mayorista.TabIndex = 20;
+            this.rb_mayorista.TabStop = true;
+            this.rb_mayorista.Text = "Mayorista";
+            this.rb_mayorista.UseVisualStyleBackColor = true;
+            this.rb_mayorista.CheckedChanged += new System.EventHandler(this.rb_mayorista_CheckedChanged);
             // 
-            // datosMinorista
+            // gb_minorista
             // 
-            this.datosMinorista.Controls.Add(this.lbl_dni);
-            this.datosMinorista.Controls.Add(this.txt_dni);
-            this.datosMinorista.Enabled = false;
-            this.datosMinorista.ForeColor = System.Drawing.Color.White;
-            this.datosMinorista.Location = new System.Drawing.Point(21, 310);
-            this.datosMinorista.Name = "datosMinorista";
-            this.datosMinorista.Size = new System.Drawing.Size(279, 61);
-            this.datosMinorista.TabIndex = 21;
-            this.datosMinorista.TabStop = false;
-            this.datosMinorista.Text = "Datos Minorista";
+            this.gb_minorista.Controls.Add(this.lbl_dni);
+            this.gb_minorista.Controls.Add(this.txt_dni);
+            this.gb_minorista.Enabled = false;
+            this.gb_minorista.ForeColor = System.Drawing.Color.White;
+            this.gb_minorista.Location = new System.Drawing.Point(21, 310);
+            this.gb_minorista.Name = "gb_minorista";
+            this.gb_minorista.Size = new System.Drawing.Size(279, 61);
+            this.gb_minorista.TabIndex = 21;
+            this.gb_minorista.TabStop = false;
+            this.gb_minorista.Text = "Datos Minorista";
             // 
             // lbl_dni
             // 
@@ -182,22 +184,41 @@ namespace Vista
             this.txt_dni.Size = new System.Drawing.Size(173, 23);
             this.txt_dni.TabIndex = 8;
             // 
-            // datosMayorista
+            // gb_mayorista
             // 
-            this.datosMayorista.Controls.Add(this.lbl_porcentage_ganancia);
-            this.datosMayorista.Controls.Add(this.txt_porcentage_ganancia);
-            this.datosMayorista.Controls.Add(this.lbl_ibb);
-            this.datosMayorista.Controls.Add(this.txt_ibb);
-            this.datosMayorista.Controls.Add(this.lbl_cuit);
-            this.datosMayorista.Controls.Add(this.txt_cuit);
-            this.datosMayorista.Enabled = false;
-            this.datosMayorista.ForeColor = System.Drawing.Color.White;
-            this.datosMayorista.Location = new System.Drawing.Point(21, 431);
-            this.datosMayorista.Name = "datosMayorista";
-            this.datosMayorista.Size = new System.Drawing.Size(279, 112);
-            this.datosMayorista.TabIndex = 22;
-            this.datosMayorista.TabStop = false;
-            this.datosMayorista.Text = "Datos Mayorista";
+            this.gb_mayorista.Controls.Add(this.lbl_porcentage_ganancia);
+            this.gb_mayorista.Controls.Add(this.txt_porcentage_ganancia);
+            this.gb_mayorista.Controls.Add(this.lbl_ibb);
+            this.gb_mayorista.Controls.Add(this.txt_ibb);
+            this.gb_mayorista.Controls.Add(this.lbl_cuit);
+            this.gb_mayorista.Controls.Add(this.txt_cuit);
+            this.gb_mayorista.Enabled = false;
+            this.gb_mayorista.ForeColor = System.Drawing.Color.White;
+            this.gb_mayorista.Location = new System.Drawing.Point(21, 431);
+            this.gb_mayorista.Name = "gb_mayorista";
+            this.gb_mayorista.Size = new System.Drawing.Size(279, 112);
+            this.gb_mayorista.TabIndex = 22;
+            this.gb_mayorista.TabStop = false;
+            this.gb_mayorista.Text = "Datos Mayorista";
+            // 
+            // lbl_porcentage_ganancia
+            // 
+            this.lbl_porcentage_ganancia.AutoSize = true;
+            this.lbl_porcentage_ganancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lbl_porcentage_ganancia.ForeColor = System.Drawing.Color.White;
+            this.lbl_porcentage_ganancia.Location = new System.Drawing.Point(11, 80);
+            this.lbl_porcentage_ganancia.Name = "lbl_porcentage_ganancia";
+            this.lbl_porcentage_ganancia.Size = new System.Drawing.Size(53, 18);
+            this.lbl_porcentage_ganancia.TabIndex = 28;
+            this.lbl_porcentage_ganancia.Text = "Gan %";
+            // 
+            // txt_porcentage_ganancia
+            // 
+            this.txt_porcentage_ganancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_porcentage_ganancia.Location = new System.Drawing.Point(88, 80);
+            this.txt_porcentage_ganancia.Name = "txt_porcentage_ganancia";
+            this.txt_porcentage_ganancia.Size = new System.Drawing.Size(173, 23);
+            this.txt_porcentage_ganancia.TabIndex = 27;
             // 
             // lbl_ibb
             // 
@@ -333,158 +354,6 @@ namespace Vista
             this.dataGridView1.Size = new System.Drawing.Size(990, 493);
             this.dataGridView1.TabIndex = 32;
             // 
-            // btoGuardar
-            // 
-            this.btoGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btoGuardar.Location = new System.Drawing.Point(680, 572);
-            this.btoGuardar.Name = "btoGuardar";
-            this.btoGuardar.Size = new System.Drawing.Size(336, 38);
-            this.btoGuardar.TabIndex = 33;
-            this.btoGuardar.Text = "Guardar";
-            this.btoGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btoEliminar
-            // 
-            this.btoEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btoEliminar.Location = new System.Drawing.Point(856, 522);
-            this.btoEliminar.Name = "btoEliminar";
-            this.btoEliminar.Size = new System.Drawing.Size(160, 38);
-            this.btoEliminar.TabIndex = 34;
-            this.btoEliminar.Text = "Eliminar";
-            this.btoEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btoSalir
-            // 
-            this.btoSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btoSalir.Location = new System.Drawing.Point(1219, 572);
-            this.btoSalir.Name = "btoSalir";
-            this.btoSalir.Size = new System.Drawing.Size(102, 38);
-            this.btoSalir.TabIndex = 35;
-            this.btoSalir.Text = "Salir";
-            this.btoSalir.UseVisualStyleBackColor = true;
-            // 
-            // btn_limpiar_datos
-            // 
-            this.btn_limpiar_datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btn_limpiar_datos.Location = new System.Drawing.Point(26, 568);
-            this.btn_limpiar_datos.Name = "btn_limpiar_datos";
-            this.btn_limpiar_datos.Size = new System.Drawing.Size(274, 38);
-            this.btn_limpiar_datos.TabIndex = 36;
-            this.btn_limpiar_datos.Text = "Limpiar Datos";
-            this.btn_limpiar_datos.UseVisualStyleBackColor = true;
-            this.btn_limpiar_datos.Click += new System.EventHandler(this.btoLimpiar_Click);
-            // 
-            // lbl_nombre
-            // 
-            this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lbl_nombre.ForeColor = System.Drawing.Color.White;
-            this.lbl_nombre.Location = new System.Drawing.Point(32, 101);
-            this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(62, 18);
-            this.lbl_nombre.TabIndex = 37;
-            this.lbl_nombre.Text = "Nombre";
-            // 
-            // txt_nombre
-            // 
-            this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(114, 101);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(168, 23);
-            this.txt_nombre.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.button1.Location = new System.Drawing.Point(680, 522);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 38);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // lbl_titulo_1
-            // 
-            this.lbl_titulo_1.AutoSize = true;
-            this.lbl_titulo_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo_1.ForeColor = System.Drawing.Color.White;
-            this.lbl_titulo_1.Location = new System.Drawing.Point(30, 26);
-            this.lbl_titulo_1.Name = "lbl_titulo_1";
-            this.lbl_titulo_1.Size = new System.Drawing.Size(209, 29);
-            this.lbl_titulo_1.TabIndex = 40;
-            this.lbl_titulo_1.Text = "Datos Proveedor";
-            // 
-            // txt_porcentage_ganancia
-            // 
-            this.txt_porcentage_ganancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_porcentage_ganancia.Location = new System.Drawing.Point(88, 80);
-            this.txt_porcentage_ganancia.Name = "txt_porcentage_ganancia";
-            this.txt_porcentage_ganancia.Size = new System.Drawing.Size(173, 23);
-            this.txt_porcentage_ganancia.TabIndex = 27;
-            // 
-            // lbl_porcentage_ganancia
-            // 
-            this.lbl_porcentage_ganancia.AutoSize = true;
-            this.lbl_porcentage_ganancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lbl_porcentage_ganancia.ForeColor = System.Drawing.Color.White;
-            this.lbl_porcentage_ganancia.Location = new System.Drawing.Point(11, 80);
-            this.lbl_porcentage_ganancia.Name = "lbl_porcentage_ganancia";
-            this.lbl_porcentage_ganancia.Size = new System.Drawing.Size(53, 18);
-            this.lbl_porcentage_ganancia.TabIndex = 28;
-            this.lbl_porcentage_ganancia.Text = "Gan %";
-            // 
-            // gb_operaciones
-            // 
-            this.gb_operaciones.Controls.Add(this.rb_actualizar);
-            this.gb_operaciones.Controls.Add(this.rb_eliminar);
-            this.gb_operaciones.Controls.Add(this.rb_guardar);
-            this.gb_operaciones.ForeColor = System.Drawing.Color.White;
-            this.gb_operaciones.Location = new System.Drawing.Point(331, 511);
-            this.gb_operaciones.Name = "gb_operaciones";
-            this.gb_operaciones.Size = new System.Drawing.Size(135, 95);
-            this.gb_operaciones.TabIndex = 24;
-            this.gb_operaciones.TabStop = false;
-            this.gb_operaciones.Text = "Operacion";
-            // 
-            // rb_guardar
-            // 
-            this.rb_guardar.AutoSize = true;
-            this.rb_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.rb_guardar.ForeColor = System.Drawing.Color.White;
-            this.rb_guardar.Location = new System.Drawing.Point(24, 19);
-            this.rb_guardar.Name = "rb_guardar";
-            this.rb_guardar.Size = new System.Drawing.Size(80, 22);
-            this.rb_guardar.TabIndex = 41;
-            this.rb_guardar.TabStop = true;
-            this.rb_guardar.Text = "Guardar";
-            this.rb_guardar.UseVisualStyleBackColor = true;
-            // 
-            // rb_eliminar
-            // 
-            this.rb_eliminar.AutoSize = true;
-            this.rb_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.rb_eliminar.ForeColor = System.Drawing.Color.White;
-            this.rb_eliminar.Location = new System.Drawing.Point(24, 39);
-            this.rb_eliminar.Name = "rb_eliminar";
-            this.rb_eliminar.Size = new System.Drawing.Size(79, 22);
-            this.rb_eliminar.TabIndex = 42;
-            this.rb_eliminar.TabStop = true;
-            this.rb_eliminar.Text = "Eliminar";
-            this.rb_eliminar.UseVisualStyleBackColor = true;
-            // 
-            // rb_actualizar
-            // 
-            this.rb_actualizar.AutoSize = true;
-            this.rb_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.rb_actualizar.ForeColor = System.Drawing.Color.White;
-            this.rb_actualizar.Location = new System.Drawing.Point(24, 61);
-            this.rb_actualizar.Name = "rb_actualizar";
-            this.rb_actualizar.Size = new System.Drawing.Size(90, 22);
-            this.rb_actualizar.TabIndex = 43;
-            this.rb_actualizar.TabStop = true;
-            this.rb_actualizar.Text = "Actualizar";
-            this.rb_actualizar.UseVisualStyleBackColor = true;
-            // 
             // id
             // 
             this.id.DataPropertyName = "id";
@@ -571,6 +440,149 @@ namespace Vista
             this.telefono.ReadOnly = true;
             this.telefono.Width = 80;
             // 
+            // btn_guardar
+            // 
+            this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btn_guardar.ForeColor = System.Drawing.Color.Black;
+            this.btn_guardar.Location = new System.Drawing.Point(680, 572);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(336, 38);
+            this.btn_guardar.TabIndex = 33;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btn_eliminar.ForeColor = System.Drawing.Color.Black;
+            this.btn_eliminar.Location = new System.Drawing.Point(856, 522);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(160, 38);
+            this.btn_eliminar.TabIndex = 34;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
+            // btn_salir
+            // 
+            this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btn_salir.ForeColor = System.Drawing.Color.Black;
+            this.btn_salir.Location = new System.Drawing.Point(1202, 572);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(119, 38);
+            this.btn_salir.TabIndex = 35;
+            this.btn_salir.Text = "Salir";
+            this.btn_salir.UseVisualStyleBackColor = true;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            // 
+            // btn_limpiar_datos
+            // 
+            this.btn_limpiar_datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btn_limpiar_datos.ForeColor = System.Drawing.Color.Black;
+            this.btn_limpiar_datos.Location = new System.Drawing.Point(26, 568);
+            this.btn_limpiar_datos.Name = "btn_limpiar_datos";
+            this.btn_limpiar_datos.Size = new System.Drawing.Size(274, 38);
+            this.btn_limpiar_datos.TabIndex = 36;
+            this.btn_limpiar_datos.Text = "Limpiar Datos";
+            this.btn_limpiar_datos.UseVisualStyleBackColor = true;
+            // 
+            // lbl_nombre
+            // 
+            this.lbl_nombre.AutoSize = true;
+            this.lbl_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lbl_nombre.ForeColor = System.Drawing.Color.White;
+            this.lbl_nombre.Location = new System.Drawing.Point(32, 101);
+            this.lbl_nombre.Name = "lbl_nombre";
+            this.lbl_nombre.Size = new System.Drawing.Size(62, 18);
+            this.lbl_nombre.TabIndex = 37;
+            this.lbl_nombre.Text = "Nombre";
+            // 
+            // txt_nombre
+            // 
+            this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombre.Location = new System.Drawing.Point(114, 101);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(168, 23);
+            this.txt_nombre.TabIndex = 1;
+            // 
+            // btn_actualizar
+            // 
+            this.btn_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btn_actualizar.ForeColor = System.Drawing.Color.Black;
+            this.btn_actualizar.Location = new System.Drawing.Point(680, 522);
+            this.btn_actualizar.Name = "btn_actualizar";
+            this.btn_actualizar.Size = new System.Drawing.Size(160, 38);
+            this.btn_actualizar.TabIndex = 39;
+            this.btn_actualizar.Text = "Actualizar";
+            this.btn_actualizar.UseVisualStyleBackColor = true;
+            // 
+            // lbl_titulo_1
+            // 
+            this.lbl_titulo_1.AutoSize = true;
+            this.lbl_titulo_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titulo_1.ForeColor = System.Drawing.Color.White;
+            this.lbl_titulo_1.Location = new System.Drawing.Point(30, 26);
+            this.lbl_titulo_1.Name = "lbl_titulo_1";
+            this.lbl_titulo_1.Size = new System.Drawing.Size(209, 29);
+            this.lbl_titulo_1.TabIndex = 40;
+            this.lbl_titulo_1.Text = "Datos Proveedor";
+            // 
+            // gb_operaciones
+            // 
+            this.gb_operaciones.Controls.Add(this.rb_actualizar);
+            this.gb_operaciones.Controls.Add(this.rb_eliminar);
+            this.gb_operaciones.Controls.Add(this.rb_guardar);
+            this.gb_operaciones.ForeColor = System.Drawing.Color.White;
+            this.gb_operaciones.Location = new System.Drawing.Point(331, 511);
+            this.gb_operaciones.Name = "gb_operaciones";
+            this.gb_operaciones.Size = new System.Drawing.Size(135, 95);
+            this.gb_operaciones.TabIndex = 24;
+            this.gb_operaciones.TabStop = false;
+            this.gb_operaciones.Text = "Operacion";
+            // 
+            // rb_actualizar
+            // 
+            this.rb_actualizar.AutoSize = true;
+            this.rb_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.rb_actualizar.ForeColor = System.Drawing.Color.White;
+            this.rb_actualizar.Location = new System.Drawing.Point(24, 61);
+            this.rb_actualizar.Name = "rb_actualizar";
+            this.rb_actualizar.Size = new System.Drawing.Size(90, 22);
+            this.rb_actualizar.TabIndex = 43;
+            this.rb_actualizar.TabStop = true;
+            this.rb_actualizar.Text = "Actualizar";
+            this.rb_actualizar.UseVisualStyleBackColor = true;
+            this.rb_actualizar.CheckedChanged += new System.EventHandler(this.rb_actualizar_CheckedChanged);
+            // 
+            // rb_eliminar
+            // 
+            this.rb_eliminar.AutoSize = true;
+            this.rb_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.rb_eliminar.ForeColor = System.Drawing.Color.White;
+            this.rb_eliminar.Location = new System.Drawing.Point(24, 39);
+            this.rb_eliminar.Name = "rb_eliminar";
+            this.rb_eliminar.Size = new System.Drawing.Size(79, 22);
+            this.rb_eliminar.TabIndex = 42;
+            this.rb_eliminar.TabStop = true;
+            this.rb_eliminar.Text = "Eliminar";
+            this.rb_eliminar.UseVisualStyleBackColor = true;
+            this.rb_eliminar.CheckedChanged += new System.EventHandler(this.rb_eliminar_CheckedChanged);
+            // 
+            // rb_guardar
+            // 
+            this.rb_guardar.AutoSize = true;
+            this.rb_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.rb_guardar.ForeColor = System.Drawing.Color.White;
+            this.rb_guardar.Location = new System.Drawing.Point(24, 19);
+            this.rb_guardar.Name = "rb_guardar";
+            this.rb_guardar.Size = new System.Drawing.Size(80, 22);
+            this.rb_guardar.TabIndex = 41;
+            this.rb_guardar.TabStop = true;
+            this.rb_guardar.Text = "Guardar";
+            this.rb_guardar.UseVisualStyleBackColor = true;
+            this.rb_guardar.CheckedChanged += new System.EventHandler(this.rb_guardar_CheckedChanged);
+            // 
             // Frm_proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,13 +591,13 @@ namespace Vista
             this.ClientSize = new System.Drawing.Size(1350, 622);
             this.Controls.Add(this.gb_operaciones);
             this.Controls.Add(this.lbl_titulo_1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_actualizar);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.lbl_nombre);
             this.Controls.Add(this.btn_limpiar_datos);
-            this.Controls.Add(this.btoSalir);
-            this.Controls.Add(this.btoEliminar);
-            this.Controls.Add(this.btoGuardar);
+            this.Controls.Add(this.btn_salir);
+            this.Controls.Add(this.btn_eliminar);
+            this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txt_numero);
             this.Controls.Add(this.txt_provincia);
@@ -595,23 +607,24 @@ namespace Vista
             this.Controls.Add(this.txt_telefono);
             this.Controls.Add(this.txt_calle);
             this.Controls.Add(this.txt_cuidad);
-            this.Controls.Add(this.datosMayorista);
-            this.Controls.Add(this.datosMinorista);
-            this.Controls.Add(this.rb_mayorsita);
-            this.Controls.Add(this.rb_minorsita);
+            this.Controls.Add(this.gb_mayorista);
+            this.Controls.Add(this.gb_minorista);
+            this.Controls.Add(this.rb_mayorista);
+            this.Controls.Add(this.rb_minorista);
             this.Controls.Add(this.lbl_telefono);
             this.Controls.Add(this.lbl_calle);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.lbl_id);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "Frm_proveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ABM-Proveedores";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmProveedores_FormClosed);
+            this.Text = "Proveedores";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_proveedores_Load);
-            this.datosMinorista.ResumeLayout(false);
-            this.datosMinorista.PerformLayout();
-            this.datosMayorista.ResumeLayout(false);
-            this.datosMayorista.PerformLayout();
+            this.gb_minorista.ResumeLayout(false);
+            this.gb_minorista.PerformLayout();
+            this.gb_mayorista.ResumeLayout(false);
+            this.gb_mayorista.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gb_operaciones.ResumeLayout(false);
             this.gb_operaciones.PerformLayout();
@@ -626,12 +639,12 @@ namespace Vista
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.Label lbl_calle;
         private System.Windows.Forms.Label lbl_telefono;
-        private System.Windows.Forms.RadioButton rb_minorsita;
-        private System.Windows.Forms.RadioButton rb_mayorsita;
-        private System.Windows.Forms.GroupBox datosMinorista;
+        private System.Windows.Forms.RadioButton rb_minorista;
+        private System.Windows.Forms.RadioButton rb_mayorista;
+        private System.Windows.Forms.GroupBox gb_minorista;
         private System.Windows.Forms.Label lbl_dni;
         private System.Windows.Forms.TextBox txt_dni;
-        private System.Windows.Forms.GroupBox datosMayorista;
+        private System.Windows.Forms.GroupBox gb_mayorista;
         private System.Windows.Forms.Label lbl_ibb;
         private System.Windows.Forms.TextBox txt_ibb;
         private System.Windows.Forms.Label lbl_cuit;
@@ -645,13 +658,13 @@ namespace Vista
         private System.Windows.Forms.TextBox txt_provincia;
         private System.Windows.Forms.TextBox txt_numero;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btoGuardar;
-        private System.Windows.Forms.Button btoEliminar;
-        private System.Windows.Forms.Button btoSalir;
+        private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.Button btn_eliminar;
+        private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Button btn_limpiar_datos;
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.TextBox txt_nombre;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_actualizar;
         private System.Windows.Forms.Label lbl_titulo_1;
         private System.Windows.Forms.Label lbl_porcentage_ganancia;
         private System.Windows.Forms.TextBox txt_porcentage_ganancia;

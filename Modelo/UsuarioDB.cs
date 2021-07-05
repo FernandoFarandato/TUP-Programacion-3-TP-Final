@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace Modelo
 {
-    class UsuarioDB
+    public class UsuarioDB
     {
 
         public static bool validarUsuarioPassword(String password)
