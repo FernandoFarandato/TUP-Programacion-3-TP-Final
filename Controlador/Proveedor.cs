@@ -39,11 +39,21 @@ namespace Modelo
             this.porcentage_ganancia = porcentage_ganancia;
         }
 
+        //Constructor para eliminacion de base de datos
+        public Proveedor(int id)
+        {
+            this.id = id;
+        }
+
 
         public void crearProveedor()
         {
             ProveedorDB.crearProveedor(this.nombre, this.es_minorista, this.dni, this.porcentage_ganancia, this.cuit, this.ibb);
         }
 
+        public void eliminarProveedor()
+        {
+            ProveedorDB.eliminarProveedor(this.id);
+        }
     }
 }

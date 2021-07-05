@@ -106,7 +106,6 @@ namespace Vista
             if (rb_guardar.Checked)
             {
                 //Datos Proveedor.
-                //int id = Int32.Parse(txt_id.Text);
                 string nombre = txt_nombre.Text;
                 int es_minorista = 0;
                 string dni = txt_dni.Text;
@@ -140,7 +139,15 @@ namespace Vista
         //Boton Eliminar
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
+            if (rb_eliminar.Checked)
+            {
+                int id = Int32.Parse(txt_id.Text);
 
+                Proveedor proveedor = new Proveedor(id);
+                proveedor.eliminarProveedor();
+
+                limpiar_txt_boxs();
+            }
         }
 
         //Boton Salir

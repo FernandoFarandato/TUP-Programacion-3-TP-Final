@@ -15,12 +15,12 @@ namespace Modelo
         {
             string querry = $"INSERT INTO proveedores (nombre, es_minorista, dni, porcentage_ganancia, cuit, ibb) VALUES ('{nombre}', '{es_minorista}', '{dni}', '{porcentage_ganancia}', '{cuit}', '{ibb}')";
 
-            MySqlConnection conexionBD = ConexionDB.conexionBD();
-            conexionBD.Open();
+            MySqlConnection conexionDB = ConexionDB.conexionBD();
+            conexionDB.Open();
 
             try
             {
-                MySqlCommand comando = new MySqlCommand(querry, conexionBD);
+                MySqlCommand comando = new MySqlCommand(querry, conexionDB);
                 comando.ExecuteNonQuery();
                 MessageBox.Show($"Proveedor guardado correctamente");
             }
@@ -30,11 +30,32 @@ namespace Modelo
             }
             finally
             {
-                conexionBD.Close();
+                conexionDB.Close();
             }
         }
 
+        public static void eliminarProveedor(int id)
+        {
+            string querry = $"DELETE from proveedores WHERE id = '{id}';";
 
+            MySqlConnection conexionDB = ConexionDB.conexionBD();
+            conexionDB.Open();
+
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(querry, conexionDB);
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Proveedor Eliminado");
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error al eliminar Proveedor {ex.Message}");
+            }
+            finally
+            {
+                conexionDB.Close();
+            }
+        }
 
     }
 }
