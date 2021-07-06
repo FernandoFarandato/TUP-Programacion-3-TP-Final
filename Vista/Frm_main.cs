@@ -13,9 +13,24 @@ namespace Vista
             this.Text = this.Text + " - User: " + user;
         }
 
-
-        //Menus Barra de Navegacion.
+        //Menus Barra de Navegacion --------------------------
         private void ToolStripMenuItem_proveedores_Click(object sender, EventArgs e)
+        {
+            menuProveedores();
+        }
+
+        private void ToolStripMenuItem_marca_Click(object sender, EventArgs e)
+        {
+            menuMarcas();
+        }
+
+        private void ToolStripMenuItem_productos_Click(object sender, EventArgs e)
+        {
+            menuProductos();
+        }
+
+        // Funciones -----------------------------
+        private void menuProveedores()
         {
             ToolStripMenuItem_proveedores.Enabled = false;
             Frm_proveedores frm_proveedor = new Frm_proveedores(ref this.ToolStripMenuItem_proveedores);
@@ -23,15 +38,7 @@ namespace Vista
             frm_proveedor.Show();
         }
 
-        private void ToolStripMenuItem_marca_Click(object sender, EventArgs e)
-        {
-            ToolStripMenuItem_marca.Enabled = false;
-            Frm_marcas frm_marcas = new Frm_marcas(ref this.ToolStripMenuItem_marca);
-            frm_marcas.MdiParent = this;
-            frm_marcas.Show();
-        }
-
-        private void ToolStripMenuItem_productos_Click(object sender, EventArgs e)
+        private void menuProductos()
         {
             ToolStripMenuItem_productos.Enabled = false;
             Frm_Productos frm_productos = new Frm_Productos(ref this.ToolStripMenuItem_productos);
@@ -39,9 +46,12 @@ namespace Vista
             frm_productos.Show();
         }
 
-        private void ToolStripMenuItem_usuarios_Click(object sender, EventArgs e)
+        private void menuMarcas()
         {
-
+            ToolStripMenuItem_marca.Enabled = false;
+            Frm_marcas frm_marcas = new Frm_marcas(ref this.ToolStripMenuItem_marca);
+            frm_marcas.MdiParent = this;
+            frm_marcas.Show();
         }
 
         //Otros
@@ -50,6 +60,5 @@ namespace Vista
         {
             Environment.Exit(0);
         }
-
     }
 }

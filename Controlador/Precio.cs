@@ -9,17 +9,23 @@ namespace Controlador
         private string precio;
         private int productos_id;
 
+        //Constructor Completo
+        public Precio(int id, string precio, int productos_id)
+        {
+            this.id = id;
+            this.precio = precio;
+            this.productos_id = productos_id;
+        }
+
         public Precio(string precio, int producots_id)
         {
             this.precio = precio;
             this.productos_id = producots_id;
         }
 
-        public Precio(int id, string precio, int producots_id)
+        public override string ToString()
         {
-            this.id = id;
-            this.precio = precio;
-            this.productos_id = producots_id;
+            return $"ID: {this.id}, Precio: {this.precio}, ID Producto: {this.productos_id}";
         }
 
         public void crearPrecio()
@@ -31,6 +37,5 @@ namespace Controlador
         {
             PrecioDB.eliminarPrecio(productos_id);
         }
-
     }
 }

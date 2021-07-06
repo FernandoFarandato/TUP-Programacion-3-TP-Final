@@ -75,6 +75,7 @@ namespace Modelo
                 conexionDB.Close();
             }
         }
+
         public static void eliminarProducto(int id)
         {
             string querry = $"DELETE from productos WHERE id_productos = '{id}';";
@@ -181,7 +182,5 @@ namespace Modelo
                 conexionDB.Close();
             }
         }
-
-
     }
 }

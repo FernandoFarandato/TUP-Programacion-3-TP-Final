@@ -10,7 +10,6 @@ namespace Modelo
 {
     public class UsuarioDB
     {
-
         public static bool validarUsuarioPassword(String password)
         {
             string querry = $"SELECT username, password FROM usuarios WHERE password='{password}'";
@@ -37,6 +36,5 @@ namespace Modelo
                 conexionBD.Close();
             }
         }
-
     }
 }

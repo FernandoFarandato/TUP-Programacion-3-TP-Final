@@ -5,13 +5,14 @@ namespace Controlador
 {
     public class Telefono
     {
-
         private int id;
         private string numero_contacto;
         private int proveedores_id;
 
-        public Telefono(int id, string numero_contacto, int proveedores_id) : this(id)
+        //Contructor Completo.
+        public Telefono(int id, string numero_contacto, int proveedores_id)
         {
+            this.id = id;
             this.numero_contacto = numero_contacto;
             this.proveedores_id = proveedores_id;
         }
@@ -27,6 +28,11 @@ namespace Controlador
         public Telefono(int proveedores_id)
         {
             this.proveedores_id = proveedores_id;
+        }
+
+        public override string ToString()
+        {
+            return $"ID: {this.id}, Numero Contacto: {this.numero_contacto}, ID Proveedor: {this.proveedores_id}";
         }
 
         public void crearTelefono()

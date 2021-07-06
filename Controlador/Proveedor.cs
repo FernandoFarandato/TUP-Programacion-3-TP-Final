@@ -5,7 +5,6 @@ namespace Controlador
 {
     public class Proveedor
     {
-
         private int id;
         private string nombre;
         private int es_minorista;
@@ -42,6 +41,10 @@ namespace Controlador
             this.id = id;
         }
 
+        public override string ToString()
+        {
+            return $"ID: {this.id}, Nombre: {this.nombre}, Es Minorista: {this.es_minorista}, Porcentage Ganancia: {this.porcentage_ganancia}, DNI: {this.dni}, CUIT: {this.cuit}, IBB: {this.ibb}";
+        }
 
         public void crearProveedor()
         {
@@ -71,6 +74,11 @@ namespace Controlador
         public void updateProveedor()
         {
             ProveedorDB.updateProveedor(this.id, this.nombre, this.es_minorista, this.porcentage_ganancia, this.dni, this.cuit, this.ibb);
+        }
+
+        public static int traerIDviaProducto(string nombre, int id_producto)
+        {
+            return ProveedorDB.traerIDviaProducto(nombre, id_producto);
         }
     }
 }

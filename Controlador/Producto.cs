@@ -11,6 +11,16 @@ namespace Controlador
         private int marcas_id;
         int id_proveedor;
 
+        //Constructor Comleto. Constructor para actualizacion a base de datos
+        public Producto(int id, string nombre_producto, string descripcion_producto, int marcas_id, int id_proveedor)
+        {
+            this.id = id;
+            this.nombre_producto = nombre_producto;
+            this.descripcion_producto = descripcion_producto;
+            this.marcas_id = marcas_id;
+            this.id_proveedor = id_proveedor;
+        }
+
         //Construcotr para eliminacio de base de datos
         public Producto(int id, int id_proveedor)
         {
@@ -27,16 +37,10 @@ namespace Controlador
             this.id_proveedor = id_proveedor;
         }
 
-        //Constructor para actualizacion a base de datos
-        public Producto(int id, string nombre_producto, string descripcion_producto, int marcas_id, int id_proveedor)
+        public override string ToString()
         {
-            this.id = id;
-            this.nombre_producto = nombre_producto;
-            this.descripcion_producto = descripcion_producto;
-            this.marcas_id = marcas_id;
-            this.id_proveedor = id_proveedor;
+            return $"ID: {this.id}, Nombre: {this.nombre_producto}, Descripcion: {this.descripcion_producto}, ID Marca: {this.marcas_id}, ID Proveedor: {this.id_proveedor}";
         }
-
         public void crearProducto()
         {
            ProductoDB.crearProducto(this.nombre_producto, this.descripcion_producto, this.marcas_id, this.id_proveedor);
@@ -49,7 +53,7 @@ namespace Controlador
 
         public void eliminarRelacionProductoProveedor()
         {
-            ProductoDB.eliminarRelacionProductoProveedor(this.id, this.id_proveedor);
+            ProductoDB.eliminarRelacionProductoProveedor(this.id, this.id_proveedor );
         }
 
         public void eliminarProducto()

@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_marcas));
             this.gb_operaciones = new System.Windows.Forms.GroupBox();
             this.rb_actualizar = new System.Windows.Forms.RadioButton();
             this.rb_eliminar = new System.Windows.Forms.RadioButton();
@@ -51,7 +52,7 @@
             this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.lbl_id = new System.Windows.Forms.Label();
-            this.id_marcas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion_marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_operaciones.SuspendLayout();
@@ -208,38 +209,38 @@
             // 
             this.dgv_marcas.AllowUserToAddRows = false;
             this.dgv_marcas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_marcas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_marcas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_marcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_marcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_marcas,
+            this.id,
             this.nombre_marca,
             this.descripcion_marca});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_marcas.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_marcas.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_marcas.Location = new System.Drawing.Point(335, 12);
             this.dgv_marcas.Name = "dgv_marcas";
             this.dgv_marcas.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_marcas.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_marcas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_marcas.Size = new System.Drawing.Size(990, 493);
             this.dgv_marcas.TabIndex = 59;
             this.dgv_marcas.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_marcas_RowHeaderMouseDoubleClick);
@@ -285,21 +286,21 @@
             this.lbl_id.TabIndex = 49;
             this.lbl_id.Text = "ID";
             // 
-            // id_marcas
+            // id
             // 
-            this.id_marcas.DataPropertyName = "id_marcas";
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.id_marcas.DefaultCellStyle = dataGridViewCellStyle8;
-            this.id_marcas.HeaderText = "ID";
-            this.id_marcas.Name = "id_marcas";
-            this.id_marcas.ReadOnly = true;
-            this.id_marcas.Width = 40;
+            this.id.DataPropertyName = "id_marcas";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 40;
             // 
             // nombre_marca
             // 
             this.nombre_marca.DataPropertyName = "nombre_marca";
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            this.nombre_marca.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.nombre_marca.DefaultCellStyle = dataGridViewCellStyle3;
             this.nombre_marca.HeaderText = "Nombre";
             this.nombre_marca.Name = "nombre_marca";
             this.nombre_marca.ReadOnly = true;
@@ -307,8 +308,8 @@
             // descripcion_marca
             // 
             this.descripcion_marca.DataPropertyName = "descripcion_marca";
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.descripcion_marca.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.descripcion_marca.DefaultCellStyle = dataGridViewCellStyle4;
             this.descripcion_marca.HeaderText = "Descripcion";
             this.descripcion_marca.Name = "descripcion_marca";
             this.descripcion_marca.ReadOnly = true;
@@ -334,10 +335,10 @@
             this.Controls.Add(this.txt_descripcion);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.lbl_id);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_marcas";
             this.Text = "Frm_marcas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-//            this.Load += new System.EventHandler(this.Frm_marcas_Load);
             this.gb_operaciones.ResumeLayout(false);
             this.gb_operaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_marcas)).EndInit();
@@ -365,7 +366,7 @@
         private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Label lbl_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_marcas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion_marca;
     }

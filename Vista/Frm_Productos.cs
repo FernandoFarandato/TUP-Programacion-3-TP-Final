@@ -88,7 +88,8 @@ namespace Vista
             if (rb_eliminar.Checked)
             {
                 int id = Int32.Parse(txt_id.Text);
-                int id_proveedor = Int32.Parse(txt_proveedores_id.Text);
+                string nombreProveedor = Convert.ToString(this.dgv_productos.CurrentRow.Cells["nombre"].Value);
+                int id_proveedor = Proveedor.traerIDviaProducto(nombreProveedor, id);
                 Precio.eliminarPrecio(id);
 
                 Producto producto = new Producto(id, id_proveedor);
@@ -213,7 +214,6 @@ namespace Vista
         {
 
         }
-
 
     }
 }

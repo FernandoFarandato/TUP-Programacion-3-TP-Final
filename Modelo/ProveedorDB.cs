@@ -34,7 +34,6 @@ namespace Modelo
                 conexionDB.Close();
             }
         }
-
         public static void eliminarProveedor(int id)
         {
             string querry = $"DELETE from proveedores WHERE id = '{id}';";
@@ -90,7 +89,37 @@ namespace Modelo
             return id;
         }
    
-        //Falta Agregar Telefonos
+        public static int traerIDviaProducto(string nombre, int id_producto)
+        {
+            int id = -1;
+            string querry = $"SELECT id FROM proveedores AS p INNER JOIN proveedores_has_productos AS rel ON nombre LIKE '{nombre}' AND productos_id ='{id_producto}'";
+
+            MySqlDataReader dataReader = null;
+            MySqlConnection conexionDB = ConexionDB.conexionBD();
+            conexionDB.Open();
+
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(querry, conexionDB);
+                dataReader = comando.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    id = int.Parse(dataReader.GetString(0));
+                }
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show($"Error al buscar ID{e.Message}");
+
+            }
+            finally
+            {
+                conexionDB.Close();
+            }
+            return id;
+        }
+
         public static DataTable traerProveedores_Direccion_Telefono()
         {
             string querry = $"SELECT p.id, p.nombre, p.dni, p.cuit, p.ibb, p.porcentage_ganancia, d.provincia, d.cuidad, d.calle, d.numero, t.numero_contacto FROM proveedores AS p INNER JOIN direcciones AS d INNER JOIN telefonos AS t ON t.proveedores_id=p.id AND d.proveedores_id=p.id";
@@ -148,8 +177,6 @@ namespace Modelo
 
             return dataTableProveedores;
         }
-
-
 
         public static void updateProveedor(
             int id,

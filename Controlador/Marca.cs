@@ -9,7 +9,7 @@ namespace Controlador
         private string nombre_marca;
         private string descripcion_marca;
 
-        //Construcotr para actualizacion a base de datos
+        //Construcotr Completo. Contructor para actualizacion a base de datos
         public Marca(int id, string nombre_marca, string descripcion_marca)
         {
             this.id = id;
@@ -28,6 +28,11 @@ namespace Controlador
         public Marca(int id)
         {
             this.id = id;
+        }
+
+        public override string ToString()
+        {
+            return $"ID: {this.id}, Nombre: {this.nombre_marca}, Descripcion: {this.descripcion_marca}";
         }
 
         public void crearMarca()

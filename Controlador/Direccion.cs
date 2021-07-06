@@ -38,6 +38,11 @@ namespace Controlador
             this.id = id;
         }
 
+        public override string ToString()
+        {
+            return $"ID: {this.id}, Calle: {this.calle}, Numero: {this.numero}, Cuidad: {this.cuidad}, Proviniva: {this.provincia}, ID Proveedor: {this.proveedores_id}";
+        }
+
         public void crearDireccion()
         {
             DireccionDB.crearDireccion(this.calle, this.numero, this.cuidad, this.provincia, this.proveedores_id);
@@ -52,6 +57,5 @@ namespace Controlador
         {
             DireccionDB.updateDireccion(this.calle, this.numero, this.cuidad, this.provincia, this.proveedores_id);
         }
-
     }
 }

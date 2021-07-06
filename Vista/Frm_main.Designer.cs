@@ -29,11 +29,11 @@ namespace Vista
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItem_proveedores = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_marca = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_productos = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_usuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,8 +43,7 @@ namespace Vista
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_proveedores,
             this.ToolStripMenuItem_marca,
-            this.ToolStripMenuItem_productos,
-            this.ToolStripMenuItem_usuarios});
+            this.ToolStripMenuItem_productos});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1350, 28);
@@ -78,15 +77,6 @@ namespace Vista
             this.ToolStripMenuItem_productos.Text = "Productos";
             this.ToolStripMenuItem_productos.Click += new System.EventHandler(this.ToolStripMenuItem_productos_Click);
             // 
-            // ToolStripMenuItem_usuarios
-            // 
-            this.ToolStripMenuItem_usuarios.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ToolStripMenuItem_usuarios.ForeColor = System.Drawing.Color.White;
-            this.ToolStripMenuItem_usuarios.Name = "ToolStripMenuItem_usuarios";
-            this.ToolStripMenuItem_usuarios.Size = new System.Drawing.Size(77, 24);
-            this.ToolStripMenuItem_usuarios.Text = "Usuarios";
-            this.ToolStripMenuItem_usuarios.Click += new System.EventHandler(this.ToolStripMenuItem_usuarios_Click);
-            // 
             // Frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,6 +87,7 @@ namespace Vista
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Frm_main";
@@ -115,6 +106,5 @@ namespace Vista
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_productos;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_proveedores;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_marca;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_usuarios;
     }
 }
