@@ -1,7 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Modelo;
 using System.Data;
 
-namespace Modelo
+namespace Controlador
 {
     public class Proveedor
     {
@@ -61,6 +61,11 @@ namespace Modelo
         public static DataTable traerProveedores_Direccion_Telefono() {
 
             return ProveedorDB.traerProveedores_Direccion_Telefono();
+        }
+
+        public static DataTable traerProveedores_Nombre()
+        {
+            return ProveedorDB.traerProveedores_Nombre();
         }
 
         public void updateProveedor()

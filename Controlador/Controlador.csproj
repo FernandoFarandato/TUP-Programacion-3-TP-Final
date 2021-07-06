@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Direccion.cs" />
     <Compile Include="Marca.cs" />
+    <Compile Include="Precio.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Proveedor.cs" />
     <Compile Include="Telefono.cs" />

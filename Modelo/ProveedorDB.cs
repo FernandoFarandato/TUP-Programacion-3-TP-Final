@@ -119,7 +119,38 @@ namespace Modelo
 
             return dataTableProveedores;
         }
-    
+
+        public static DataTable traerProveedores_Nombre()
+        {
+            string querry = $"SELECT p.id, p.nombre FROM proveedores AS p";
+
+            DataTable dataTableProveedores = new DataTable("proveedores");
+            MySqlConnection conexionDB = ConexionDB.conexionBD();
+            conexionDB.Open();
+
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(querry, conexionDB);
+                comando.ExecuteNonQuery();
+
+                MySqlDataAdapter dataReader = new MySqlDataAdapter(comando);
+                dataReader.Fill(dataTableProveedores);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error al cargar proveedores del servidor {ex.Message}");
+                dataTableProveedores = null;
+            }
+            finally
+            {
+                conexionDB.Close();
+            }
+
+            return dataTableProveedores;
+        }
+
+
+
         public static void updateProveedor(
             int id,
             string nombre,

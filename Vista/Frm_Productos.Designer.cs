@@ -32,13 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gb_operaciones = new System.Windows.Forms.GroupBox();
             this.rb_actualizar = new System.Windows.Forms.RadioButton();
             this.rb_eliminar = new System.Windows.Forms.RadioButton();
@@ -61,17 +69,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_precio = new System.Windows.Forms.TextBox();
             this.lbl_precio = new System.Windows.Forms.Label();
+            this.txt_proveedores_id = new System.Windows.Forms.TextBox();
+            this.txt_id_provedores = new System.Windows.Forms.Label();
+            this.txt_marcas_id = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dgv_proveedores = new System.Windows.Forms.DataGridView();
             this.id_marcas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion_producots = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion_productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qqq = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_operaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_marcas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_proveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // gb_operaciones
@@ -244,7 +261,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_marcas.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_marcas.Location = new System.Drawing.Point(1070, 72);
+            this.dgv_marcas.Location = new System.Drawing.Point(1142, 72);
             this.dgv_marcas.Name = "dgv_marcas";
             this.dgv_marcas.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -255,7 +272,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_marcas.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv_marcas.Size = new System.Drawing.Size(183, 433);
+            this.dgv_marcas.Size = new System.Drawing.Size(138, 433);
             this.dgv_marcas.TabIndex = 73;
             this.dgv_marcas.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_marcas_RowHeaderMouseDoubleClick);
             // 
@@ -264,7 +281,7 @@
             this.lbl_descripcion.AutoSize = true;
             this.lbl_descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbl_descripcion.ForeColor = System.Drawing.Color.White;
-            this.lbl_descripcion.Location = new System.Drawing.Point(26, 176);
+            this.lbl_descripcion.Location = new System.Drawing.Point(26, 239);
             this.lbl_descripcion.Name = "lbl_descripcion";
             this.lbl_descripcion.Size = new System.Drawing.Size(87, 18);
             this.lbl_descripcion.TabIndex = 72;
@@ -273,7 +290,7 @@
             // txt_descripcion
             // 
             this.txt_descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_descripcion.Location = new System.Drawing.Point(29, 207);
+            this.txt_descripcion.Location = new System.Drawing.Point(29, 269);
             this.txt_descripcion.MaxLength = 250;
             this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
@@ -315,31 +332,31 @@
             this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_productos,
-            this.nombre_producto,
-            this.descripcion_producots,
+            this.nombre_productos,
+            this.descripcion_productos,
+            this.qqq,
             this.precio,
-            this.nombre,
-            this.Marca});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_productos.DefaultCellStyle = dataGridViewCellStyle10;
+            this.nombre});
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_productos.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgv_productos.Location = new System.Drawing.Point(334, 72);
             this.dgv_productos.Name = "dgv_productos";
             this.dgv_productos.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgv_productos.Size = new System.Drawing.Size(663, 433);
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgv_productos.Size = new System.Drawing.Size(599, 433);
             this.dgv_productos.TabIndex = 81;
             this.dgv_productos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgb_productos_RowHeaderMouseDoubleClick);
             // 
@@ -359,7 +376,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1065, 26);
+            this.label2.Location = new System.Drawing.Point(1137, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 29);
             this.label2.TabIndex = 83;
@@ -385,6 +402,97 @@
             this.lbl_precio.TabIndex = 85;
             this.lbl_precio.Text = "Precio";
             // 
+            // txt_proveedores_id
+            // 
+            this.txt_proveedores_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_proveedores_id.Location = new System.Drawing.Point(117, 159);
+            this.txt_proveedores_id.MaxLength = 45;
+            this.txt_proveedores_id.Name = "txt_proveedores_id";
+            this.txt_proveedores_id.Size = new System.Drawing.Size(168, 23);
+            this.txt_proveedores_id.TabIndex = 86;
+            this.txt_proveedores_id.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // txt_id_provedores
+            // 
+            this.txt_id_provedores.AutoSize = true;
+            this.txt_id_provedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txt_id_provedores.ForeColor = System.Drawing.Color.White;
+            this.txt_id_provedores.Location = new System.Drawing.Point(35, 159);
+            this.txt_id_provedores.Name = "txt_id_provedores";
+            this.txt_id_provedores.Size = new System.Drawing.Size(61, 18);
+            this.txt_id_provedores.TabIndex = 87;
+            this.txt_id_provedores.Text = "Prov. ID";
+            // 
+            // txt_marcas_id
+            // 
+            this.txt_marcas_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_marcas_id.Location = new System.Drawing.Point(117, 188);
+            this.txt_marcas_id.MaxLength = 45;
+            this.txt_marcas_id.Name = "txt_marcas_id";
+            this.txt_marcas_id.Size = new System.Drawing.Size(168, 23);
+            this.txt_marcas_id.TabIndex = 88;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(35, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 18);
+            this.label4.TabIndex = 89;
+            this.label4.Text = "ID Marca";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(965, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 29);
+            this.label5.TabIndex = 91;
+            this.label5.Text = "Lista Prov.";
+            // 
+            // dgv_proveedores
+            // 
+            this.dgv_proveedores.AllowUserToAddRows = false;
+            this.dgv_proveedores.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgv_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_proveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.dataGridViewTextBoxColumn2});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_proveedores.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgv_proveedores.Location = new System.Drawing.Point(970, 72);
+            this.dgv_proveedores.Name = "dgv_proveedores";
+            this.dgv_proveedores.ReadOnly = true;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_proveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgv_proveedores.Size = new System.Drawing.Size(138, 433);
+            this.dgv_proveedores.TabIndex = 90;
+            this.dgv_proveedores.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_proveedores_RowHeaderMouseDoubleClick);
+            // 
             // id_marcas
             // 
             this.id_marcas.DataPropertyName = "id_marcas";
@@ -393,7 +501,7 @@
             this.id_marcas.HeaderText = "ID";
             this.id_marcas.Name = "id_marcas";
             this.id_marcas.ReadOnly = true;
-            this.id_marcas.Width = 40;
+            this.id_marcas.Width = 25;
             // 
             // nombre_marca
             // 
@@ -403,6 +511,27 @@
             this.nombre_marca.HeaderText = "Nombre";
             this.nombre_marca.Name = "nombre_marca";
             this.nombre_marca.ReadOnly = true;
+            this.nombre_marca.Width = 70;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.id.DefaultCellStyle = dataGridViewCellStyle16;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 25;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 70;
             // 
             // id_productos
             // 
@@ -412,30 +541,43 @@
             this.id_productos.HeaderText = "ID";
             this.id_productos.Name = "id_productos";
             this.id_productos.ReadOnly = true;
-            this.id_productos.Width = 40;
+            this.id_productos.Width = 25;
             // 
-            // nombre_producto
+            // nombre_productos
             // 
-            this.nombre_producto.DataPropertyName = "nombre_producto";
+            this.nombre_productos.DataPropertyName = "nombre_productos";
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.nombre_producto.DefaultCellStyle = dataGridViewCellStyle8;
-            this.nombre_producto.HeaderText = "Nombre";
-            this.nombre_producto.Name = "nombre_producto";
-            this.nombre_producto.ReadOnly = true;
+            this.nombre_productos.DefaultCellStyle = dataGridViewCellStyle8;
+            this.nombre_productos.HeaderText = "Nombre";
+            this.nombre_productos.Name = "nombre_productos";
+            this.nombre_productos.ReadOnly = true;
             // 
-            // descripcion_producots
+            // descripcion_productos
             // 
-            this.descripcion_producots.DataPropertyName = "descripcion_producots";
+            this.descripcion_productos.DataPropertyName = "descripcion_productos";
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            this.descripcion_producots.DefaultCellStyle = dataGridViewCellStyle9;
-            this.descripcion_producots.HeaderText = "Descripcion";
-            this.descripcion_producots.Name = "descripcion_producots";
-            this.descripcion_producots.ReadOnly = true;
-            this.descripcion_producots.Width = 180;
+            this.descripcion_productos.DefaultCellStyle = dataGridViewCellStyle9;
+            this.descripcion_productos.HeaderText = "Descripcion";
+            this.descripcion_productos.Name = "descripcion_productos";
+            this.descripcion_productos.ReadOnly = true;
+            this.descripcion_productos.Width = 130;
+            // 
+            // qqq
+            // 
+            this.qqq.DataPropertyName = "nombre_marca";
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.qqq.DefaultCellStyle = dataGridViewCellStyle10;
+            this.qqq.HeaderText = "Marca";
+            this.qqq.Name = "qqq";
+            this.qqq.ReadOnly = true;
             // 
             // precio
             // 
             this.precio.DataPropertyName = "precio";
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.precio.DefaultCellStyle = dataGridViewCellStyle11;
             this.precio.HeaderText = "Precio";
             this.precio.Name = "precio";
             this.precio.ReadOnly = true;
@@ -443,16 +585,12 @@
             // nombre
             // 
             this.nombre.DataPropertyName = "nombre";
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.nombre.DefaultCellStyle = dataGridViewCellStyle12;
             this.nombre.HeaderText = "Proveedor";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
-            // 
-            // Marca
-            // 
-            this.Marca.DataPropertyName = "nombre_marca";
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
             // 
             // Frm_Productos
             // 
@@ -460,6 +598,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1350, 622);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dgv_proveedores);
+            this.Controls.Add(this.txt_marcas_id);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_proveedores_id);
+            this.Controls.Add(this.txt_id_provedores);
             this.Controls.Add(this.txt_precio);
             this.Controls.Add(this.lbl_precio);
             this.Controls.Add(this.label2);
@@ -486,6 +630,7 @@
             this.gb_operaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_marcas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_proveedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,13 +660,21 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_precio;
         private System.Windows.Forms.Label lbl_precio;
+        private System.Windows.Forms.TextBox txt_proveedores_id;
+        private System.Windows.Forms.Label txt_id_provedores;
+        private System.Windows.Forms.TextBox txt_marcas_id;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgv_proveedores;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_marcas;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_productos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion_producots;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_productos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion_productos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qqq;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
     }
 }

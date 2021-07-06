@@ -56,7 +56,7 @@ namespace Modelo
         {
             string querry = $"SELECT m.id_marcas, m.nombre_marca, m.descripcion_marca FROM marcas AS m";
 
-            DataTable dataTableProveedores = new DataTable("proveedores");
+            DataTable dataTableMarcas = new DataTable("marcas");
             MySqlConnection conexionDB = ConexionDB.conexionBD();
             conexionDB.Open();
 
@@ -66,19 +66,19 @@ namespace Modelo
                 comando.ExecuteNonQuery();
 
                 MySqlDataAdapter dataReader = new MySqlDataAdapter(comando);
-                dataReader.Fill(dataTableProveedores);
+                dataReader.Fill(dataTableMarcas);
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show($"Error al cargar marcas del servidor {ex.Message}");
-                dataTableProveedores = null;
+                dataTableMarcas = null;
             }
             finally
             {
                 conexionDB.Close();
             }
 
-            return dataTableProveedores;
+            return dataTableMarcas;
         }
 
         public static void updateMarca( int id,string nombre_marca, string descripcion_marca)

@@ -33,7 +33,7 @@ namespace Vista
 
         private void ToolStripMenuItem_productos_Click(object sender, EventArgs e)
         {
-            ToolStripMenuItem_marca.Enabled = false;
+            ToolStripMenuItem_productos.Enabled = false;
             Frm_Productos frm_productos = new Frm_Productos(ref this.ToolStripMenuItem_productos);
             frm_productos.MdiParent = this;
             frm_productos.Show();

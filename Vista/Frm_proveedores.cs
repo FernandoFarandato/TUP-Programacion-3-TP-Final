@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using View;
 using Controlador;
-using Modelo;
+
 
 namespace Vista
 {

@@ -49,6 +49,7 @@
     <Compile Include="ConexionDB.cs" />
     <Compile Include="DireccionDB.cs" />
     <Compile Include="MarcaDB.cs" />
+    <Compile Include="PrecioDB.cs" />
     <Compile Include="ProductoDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorDB.cs" />
