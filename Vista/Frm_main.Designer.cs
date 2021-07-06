@@ -32,9 +32,7 @@ namespace Vista
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItem_proveedores = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_marca = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMMarcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_productos = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_usuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +47,7 @@ namespace Vista
             this.ToolStripMenuItem_usuarios});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1350, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,8 +62,6 @@ namespace Vista
             // 
             // ToolStripMenuItem_marca
             // 
-            this.ToolStripMenuItem_marca.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aBMMarcasToolStripMenuItem});
             this.ToolStripMenuItem_marca.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.ToolStripMenuItem_marca.ForeColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_marca.Name = "ToolStripMenuItem_marca";
@@ -73,28 +69,14 @@ namespace Vista
             this.ToolStripMenuItem_marca.Text = "Marcas";
             this.ToolStripMenuItem_marca.Click += new System.EventHandler(this.ToolStripMenuItem_marca_Click);
             // 
-            // aBMMarcasToolStripMenuItem
-            // 
-            this.aBMMarcasToolStripMenuItem.Name = "aBMMarcasToolStripMenuItem";
-            this.aBMMarcasToolStripMenuItem.Size = new System.Drawing.Size(163, 24);
-            this.aBMMarcasToolStripMenuItem.Text = "ABM-Marcas";
-            // 
             // ToolStripMenuItem_productos
             // 
-            this.ToolStripMenuItem_productos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aBMProductosToolStripMenuItem});
             this.ToolStripMenuItem_productos.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.ToolStripMenuItem_productos.ForeColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_productos.Name = "ToolStripMenuItem_productos";
             this.ToolStripMenuItem_productos.Size = new System.Drawing.Size(87, 24);
             this.ToolStripMenuItem_productos.Text = "Productos";
             this.ToolStripMenuItem_productos.Click += new System.EventHandler(this.ToolStripMenuItem_productos_Click);
-            // 
-            // aBMProductosToolStripMenuItem
-            // 
-            this.aBMProductosToolStripMenuItem.Name = "aBMProductosToolStripMenuItem";
-            this.aBMProductosToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
-            this.aBMProductosToolStripMenuItem.Text = "ABM-Productos";
             // 
             // ToolStripMenuItem_usuarios
             // 
@@ -111,7 +93,7 @@ namespace Vista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1283, 651);
+            this.ClientSize = new System.Drawing.Size(1350, 661);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
@@ -133,8 +115,6 @@ namespace Vista
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_productos;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_proveedores;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_marca;
-        private System.Windows.Forms.ToolStripMenuItem aBMMarcasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aBMProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_usuarios;
     }
 }

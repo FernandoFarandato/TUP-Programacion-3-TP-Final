@@ -7,87 +7,136 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using View;
+using Controlador;
+using Modelo;
 
 namespace Vista
 {
     public partial class Frm_marcas : Form
     {
 
-        ToolStripMenuItem marcasToolStripMenuItem;
+        ToolStripMenuItem toolStrimMenuItem;
 
         public Frm_marcas(ref ToolStripMenuItem menuItem)
         {
             InitializeComponent();
-            marcasToolStripMenuItem = menuItem;
-            //dgv_proveedores.DataSource = Proveedor.obtenerProveedoresYDireccionYTelefono();
+            toolStrimMenuItem = menuItem;
         }
 
+        // Botones ---------------------------------------------------
 
-        //  Botones -----------------------------------------------------------------
-
-        //Borrar datos en los formularios
-        private void btn_limpiar_datos_Click(object sender, EventArgs e)
+        //Boton Guardar
+        private void btn_guardar_Click(object sender, EventArgs e)
         {
-            borrar_txt_labels();
+            if (rb_guardar.Checked)
+            {
+                //Datos Marca.
+                string nombre = txt_nombre.Text;
+                string descripcion = txt_descripcion.Text;
+
+                Marca marca = new Marca(nombre, descripcion);
+                //marca.crearMarca();
+
+                limpiar_txt_boxs();
+                dgv_proveedores.DataSource = Proveedor.traerProveedores_Direccion_Telefono();
+            }
+        }
+        //Boton Actualizar
+
+        private void btn_actualizar_Click(object sender, EventArgs e)
+        {
+            if (rb_actualizar.Checked)
+            {
+                //Datos Marca.
+                int id = Int32.Parse(txt_id.Text);
+                string nombre = txt_nombre.Text;
+                string descripcion = txt_descripcion.Text;
+
+                Marca marca = new Marca(id, nombre, descripcion);
+                //marca.updateMarca();
+
+                limpiar_txt_boxs();
+                //dgv_proveedores.DataSource = Proveedor.traerProveedores_Direccion_Telefono();
+            }
         }
 
-        //Boton Salir del Formulario
+        //Boton Eliminar
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (rb_eliminar.Checked)
+            {
+                int id = Int32.Parse(txt_id.Text);
+
+                Marca marca = new Marca(id);
+                //marca.eliminarMarca();
+
+                limpiar_txt_boxs();
+                //dgv_proveedores.DataSource = Proveedor.traerProveedores_Direccion_Telefono();
+            }
+        }
+
+        //Boton Salir
         private void btn_salir_Click(object sender, EventArgs e)
         {
+            toolStrimMenuItem.Enabled = true;
             this.Close();
         }
 
-        //  Radio Buttons -----------------------------------------------------------------
+        // Radio Buttons ---------------------------------------------
 
-        //Radio Button Control - Guardar
+        //Radio Button Guardar
         private void rb_guardar_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_guardar.Checked) txt_id.Enabled = false;
-            else txt_id.Enabled = true;
+            if (rb_guardar.Checked) {
+                txt_id.Enabled = false;
+                txt_nombre.Enabled = true;
+                txt_descripcion.Enabled = true;
+            }
         }
-
-        //Radio Button Control - Eliminar
+        //Radio Button Eliminar
         private void rb_eliminar_CheckedChanged(object sender, EventArgs e)
         {
-
-            if (rb_eliminar.Checked)
-            {
-
-                txt_id.Enabled = true;
-                txt_nombre.Enabled = true;
-                txt_cuidad.Enabled = true;
-
-                Utils.messageWarning(this, "Elimnar Activado");
-            }
-            else
-            {
-                txt_id.Enabled = true;
-                txt_nombre.Enabled = true;
-                txt_cuidad.Enabled = true;
- 
-                Utils.messageWarning(this, "Elimnar Desactivado");
-            }
-
+            txt_id.Enabled = true;
+            txt_nombre.Enabled = false;
+            txt_descripcion.Enabled = false;
         }
-
-        //Radio Button Control - Actualizar
+        //Radio Button Actualizar
         private void rb_actualizar_CheckedChanged(object sender, EventArgs e)
         {
-            txt_id.Enabled = true;
-            lbl_id.Enabled = true;
+            txt_id.Enabled = false;
+            txt_nombre.Enabled = true;
+            txt_descripcion.Enabled = true;
         }
 
-        //  Funciones -----------------------------------------------------------------
 
-        // Limpiar texto de text_labels
-        private void borrar_txt_labels()
+        // Funciones ---------------------------------------------------
+
+        //Limpiar campos de texto
+        private void limpiar_txt_boxs()
         {
-
             txt_id.Text = "";
             txt_nombre.Text = "";
-            txt_cuidad.Text = "";
-
+            txt_descripcion.Text = "";
         }
+
+        private void cargarDatosDeTabla()
+        {
+
+            limpiar_txt_boxs();
+
+            //Tomo Datos de DataTable
+
+            //Datos Marca
+            int id = Int32.Parse(Convert.ToString(this.dgv_proveedores.CurrentRow.Cells["id"].Value));
+            string nombre = Convert.ToString(this.dgv_proveedores.CurrentRow.Cells["nombre_marca"].Value);
+            string descripcion = Convert.ToString(this.dgv_proveedores.CurrentRow.Cells["descripcion_marca"].Value);
+
+            //Los paso a los text_boxs
+
+            txt_id.Text = id.ToString();
+            txt_nombre.Text = nombre;
+            txt_descripcion.Text = descripcion;
+        }
+
     }
 }

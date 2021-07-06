@@ -29,6 +29,17 @@ namespace Vista
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_calle = new System.Windows.Forms.Label();
@@ -40,7 +51,6 @@ namespace Vista
             this.txt_dni = new System.Windows.Forms.TextBox();
             this.gb_mayorista = new System.Windows.Forms.GroupBox();
             this.lbl_porcentage_ganancia = new System.Windows.Forms.Label();
-            this.txt_porcentage_ganancia = new System.Windows.Forms.TextBox();
             this.lbl_ibb = new System.Windows.Forms.Label();
             this.txt_ibb = new System.Windows.Forms.TextBox();
             this.lbl_cuit = new System.Windows.Forms.Label();
@@ -53,18 +63,7 @@ namespace Vista
             this.lbl_provincia = new System.Windows.Forms.Label();
             this.txt_provincia = new System.Windows.Forms.TextBox();
             this.txt_numero = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.porcentage_ganancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ibb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_proveedores = new System.Windows.Forms.DataGridView();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
@@ -77,9 +76,21 @@ namespace Vista
             this.rb_actualizar = new System.Windows.Forms.RadioButton();
             this.rb_eliminar = new System.Windows.Forms.RadioButton();
             this.rb_guardar = new System.Windows.Forms.RadioButton();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ibb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porcentage_ganancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero_contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_porcentage_ganancia = new System.Windows.Forms.TextBox();
             this.gb_minorista.SuspendLayout();
             this.gb_mayorista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_proveedores)).BeginInit();
             this.gb_operaciones.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,8 +197,8 @@ namespace Vista
             // 
             // gb_mayorista
             // 
-            this.gb_mayorista.Controls.Add(this.lbl_porcentage_ganancia);
             this.gb_mayorista.Controls.Add(this.txt_porcentage_ganancia);
+            this.gb_mayorista.Controls.Add(this.lbl_porcentage_ganancia);
             this.gb_mayorista.Controls.Add(this.lbl_ibb);
             this.gb_mayorista.Controls.Add(this.txt_ibb);
             this.gb_mayorista.Controls.Add(this.lbl_cuit);
@@ -211,14 +222,6 @@ namespace Vista
             this.lbl_porcentage_ganancia.Size = new System.Drawing.Size(53, 18);
             this.lbl_porcentage_ganancia.TabIndex = 28;
             this.lbl_porcentage_ganancia.Text = "Gan %";
-            // 
-            // txt_porcentage_ganancia
-            // 
-            this.txt_porcentage_ganancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_porcentage_ganancia.Location = new System.Drawing.Point(88, 80);
-            this.txt_porcentage_ganancia.Name = "txt_porcentage_ganancia";
-            this.txt_porcentage_ganancia.Size = new System.Drawing.Size(173, 23);
-            this.txt_porcentage_ganancia.TabIndex = 27;
             // 
             // lbl_ibb
             // 
@@ -331,114 +334,29 @@ namespace Vista
             this.txt_numero.Size = new System.Drawing.Size(168, 23);
             this.txt_numero.TabIndex = 5;
             // 
-            // dataGridView1
+            // dgv_proveedores
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_proveedores.AllowUserToAddRows = false;
+            this.dgv_proveedores.AllowUserToDeleteRows = false;
+            this.dgv_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_proveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.nombre,
-            this.porcentage_ganancia,
             this.dni,
             this.cuit,
             this.ibb,
-            this.cuidad,
+            this.porcentage_ganancia,
             this.provincia,
+            this.cuidad,
             this.calle,
             this.numero,
-            this.telefono});
-            this.dataGridView1.Location = new System.Drawing.Point(331, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(990, 493);
-            this.dataGridView1.TabIndex = 32;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 40;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // porcentage_ganancia
-            // 
-            this.porcentage_ganancia.DataPropertyName = "porcentage_ganancia";
-            this.porcentage_ganancia.HeaderText = "Gan %";
-            this.porcentage_ganancia.Name = "porcentage_ganancia";
-            this.porcentage_ganancia.ReadOnly = true;
-            this.porcentage_ganancia.Width = 50;
-            // 
-            // dni
-            // 
-            this.dni.DataPropertyName = "dni";
-            this.dni.HeaderText = "DNI";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            this.dni.Width = 80;
-            // 
-            // cuit
-            // 
-            this.cuit.DataPropertyName = "cuit";
-            this.cuit.HeaderText = "CUIT";
-            this.cuit.Name = "cuit";
-            this.cuit.ReadOnly = true;
-            this.cuit.Width = 80;
-            // 
-            // ibb
-            // 
-            this.ibb.DataPropertyName = "ibb";
-            this.ibb.HeaderText = "IIBB";
-            this.ibb.Name = "ibb";
-            this.ibb.ReadOnly = true;
-            this.ibb.Width = 80;
-            // 
-            // cuidad
-            // 
-            this.cuidad.DataPropertyName = "cuidad";
-            this.cuidad.HeaderText = "Cuidad";
-            this.cuidad.Name = "cuidad";
-            this.cuidad.ReadOnly = true;
-            this.cuidad.Width = 90;
-            // 
-            // provincia
-            // 
-            this.provincia.DataPropertyName = "provincia";
-            this.provincia.HeaderText = "Provincia";
-            this.provincia.Name = "provincia";
-            this.provincia.ReadOnly = true;
-            this.provincia.Width = 90;
-            // 
-            // calle
-            // 
-            this.calle.DataPropertyName = "calle";
-            this.calle.HeaderText = "Calle";
-            this.calle.Name = "calle";
-            this.calle.ReadOnly = true;
-            // 
-            // numero
-            // 
-            this.numero.DataPropertyName = "numero";
-            this.numero.HeaderText = "Numero";
-            this.numero.Name = "numero";
-            this.numero.ReadOnly = true;
-            this.numero.Width = 80;
-            // 
-            // telefono
-            // 
-            this.telefono.DataPropertyName = "telefono";
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Width = 80;
+            this.numero_contacto});
+            this.dgv_proveedores.Location = new System.Drawing.Point(331, 12);
+            this.dgv_proveedores.Name = "dgv_proveedores";
+            this.dgv_proveedores.ReadOnly = true;
+            this.dgv_proveedores.Size = new System.Drawing.Size(990, 493);
+            this.dgv_proveedores.TabIndex = 32;
+            this.dgv_proveedores.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_proveedores_RowHeaderMouseDoubleClick);
             // 
             // btn_guardar
             // 
@@ -516,6 +434,7 @@ namespace Vista
             this.btn_actualizar.TabIndex = 39;
             this.btn_actualizar.Text = "Actualizar";
             this.btn_actualizar.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
             // lbl_titulo_1
             // 
@@ -583,6 +502,122 @@ namespace Vista
             this.rb_guardar.UseVisualStyleBackColor = true;
             this.rb_guardar.CheckedChanged += new System.EventHandler(this.rb_guardar_CheckedChanged);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.id.DefaultCellStyle = dataGridViewCellStyle1;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 40;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.nombre.DefaultCellStyle = dataGridViewCellStyle2;
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // dni
+            // 
+            this.dni.DataPropertyName = "dni";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dni.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            this.dni.Width = 80;
+            // 
+            // cuit
+            // 
+            this.cuit.DataPropertyName = "cuit";
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.cuit.DefaultCellStyle = dataGridViewCellStyle4;
+            this.cuit.HeaderText = "CUIT";
+            this.cuit.Name = "cuit";
+            this.cuit.ReadOnly = true;
+            this.cuit.Width = 80;
+            // 
+            // ibb
+            // 
+            this.ibb.DataPropertyName = "ibb";
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.ibb.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ibb.HeaderText = "IIBB";
+            this.ibb.Name = "ibb";
+            this.ibb.ReadOnly = true;
+            this.ibb.Width = 80;
+            // 
+            // porcentage_ganancia
+            // 
+            this.porcentage_ganancia.DataPropertyName = "porcentage_ganancia";
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.porcentage_ganancia.DefaultCellStyle = dataGridViewCellStyle6;
+            this.porcentage_ganancia.HeaderText = "Gan %";
+            this.porcentage_ganancia.Name = "porcentage_ganancia";
+            this.porcentage_ganancia.ReadOnly = true;
+            this.porcentage_ganancia.Width = 50;
+            // 
+            // provincia
+            // 
+            this.provincia.DataPropertyName = "provincia";
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.provincia.DefaultCellStyle = dataGridViewCellStyle7;
+            this.provincia.HeaderText = "Provincia";
+            this.provincia.Name = "provincia";
+            this.provincia.ReadOnly = true;
+            this.provincia.Width = 90;
+            // 
+            // cuidad
+            // 
+            this.cuidad.DataPropertyName = "cuidad";
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.cuidad.DefaultCellStyle = dataGridViewCellStyle8;
+            this.cuidad.HeaderText = "Cuidad";
+            this.cuidad.Name = "cuidad";
+            this.cuidad.ReadOnly = true;
+            this.cuidad.Width = 90;
+            // 
+            // calle
+            // 
+            this.calle.DataPropertyName = "calle";
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.calle.DefaultCellStyle = dataGridViewCellStyle9;
+            this.calle.HeaderText = "Calle";
+            this.calle.Name = "calle";
+            this.calle.ReadOnly = true;
+            // 
+            // numero
+            // 
+            this.numero.DataPropertyName = "numero";
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.numero.DefaultCellStyle = dataGridViewCellStyle10;
+            this.numero.HeaderText = "Numero";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            this.numero.Width = 80;
+            // 
+            // numero_contacto
+            // 
+            this.numero_contacto.DataPropertyName = "numero_contacto";
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.numero_contacto.DefaultCellStyle = dataGridViewCellStyle11;
+            this.numero_contacto.HeaderText = "Telefono";
+            this.numero_contacto.Name = "numero_contacto";
+            this.numero_contacto.ReadOnly = true;
+            this.numero_contacto.Width = 80;
+            // 
+            // txt_porcentage_ganancia
+            // 
+            this.txt_porcentage_ganancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_porcentage_ganancia.Location = new System.Drawing.Point(87, 79);
+            this.txt_porcentage_ganancia.Name = "txt_porcentage_ganancia";
+            this.txt_porcentage_ganancia.Size = new System.Drawing.Size(174, 23);
+            this.txt_porcentage_ganancia.TabIndex = 29;
+            // 
             // Frm_proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,7 +633,7 @@ namespace Vista
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_proveedores);
             this.Controls.Add(this.txt_numero);
             this.Controls.Add(this.txt_provincia);
             this.Controls.Add(this.lbl_provincia);
@@ -625,7 +660,7 @@ namespace Vista
             this.gb_minorista.PerformLayout();
             this.gb_mayorista.ResumeLayout(false);
             this.gb_mayorista.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_proveedores)).EndInit();
             this.gb_operaciones.ResumeLayout(false);
             this.gb_operaciones.PerformLayout();
             this.ResumeLayout(false);
@@ -657,7 +692,7 @@ namespace Vista
         private System.Windows.Forms.Label lbl_provincia;
         private System.Windows.Forms.TextBox txt_provincia;
         private System.Windows.Forms.TextBox txt_numero;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_proveedores;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_salir;
@@ -667,21 +702,21 @@ namespace Vista
         private System.Windows.Forms.Button btn_actualizar;
         private System.Windows.Forms.Label lbl_titulo_1;
         private System.Windows.Forms.Label lbl_porcentage_ganancia;
-        private System.Windows.Forms.TextBox txt_porcentage_ganancia;
         private System.Windows.Forms.GroupBox gb_operaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn porcentage_ganancia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ibb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn provincia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.RadioButton rb_actualizar;
         private System.Windows.Forms.RadioButton rb_eliminar;
         private System.Windows.Forms.RadioButton rb_guardar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn porcentage_ganancia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ibb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn provincia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero_contacto;
+        private System.Windows.Forms.TextBox txt_porcentage_ganancia;
     }
 }

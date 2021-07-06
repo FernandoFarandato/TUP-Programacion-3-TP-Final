@@ -25,7 +25,10 @@ namespace Vista
 
         private void ToolStripMenuItem_marca_Click(object sender, EventArgs e)
         {
-
+            ToolStripMenuItem_marca.Enabled = false;
+            Frm_marcas frm_marcas = new Frm_marcas(ref this.ToolStripMenuItem_marca);
+            frm_marcas.MdiParent = this;
+            frm_marcas.Show();
         }
 
         private void ToolStripMenuItem_productos_Click(object sender, EventArgs e)

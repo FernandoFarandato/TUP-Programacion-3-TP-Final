@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Modelo
 {
@@ -18,7 +15,7 @@ namespace Modelo
         private string porcentage_ganancia;
 
         //Constructor completo
-        public Proveedor(int id, string nombre, int es_minorista, string dni, string cuit, string ibb, string porcentage_ganancia)
+        public Proveedor(int id, string nombre, int es_minorista, string porcentage_ganancia, string dni, string cuit, string ibb )
         {
             this.id = id;
             this.nombre = nombre;
@@ -29,7 +26,7 @@ namespace Modelo
             this.porcentage_ganancia = porcentage_ganancia;
         }
         //Constructor para carga a base de datos
-        public Proveedor(string nombre, int es_minorista, string dni, string cuit, string ibb, string porcentage_ganancia)
+        public Proveedor(string nombre, int es_minorista, string porcentage_ganancia, string dni, string cuit, string ibb)
         {
             this.nombre = nombre;
             this.es_minorista = es_minorista;
@@ -48,12 +45,27 @@ namespace Modelo
 
         public void crearProveedor()
         {
-            ProveedorDB.crearProveedor(this.nombre, this.es_minorista, this.dni, this.porcentage_ganancia, this.cuit, this.ibb);
+            ProveedorDB.crearProveedor(this.nombre, this.es_minorista, this.porcentage_ganancia, this.dni, this.cuit, this.ibb);
         }
 
         public void eliminarProveedor()
         {
             ProveedorDB.eliminarProveedor(this.id);
+        }
+
+        public int traerID()
+        {
+            return ProveedorDB.traerID(this.nombre, this.es_minorista, this.dni, this.cuit);
+        }
+
+        public static DataTable traerProveedores_Direccion_Telefono() {
+
+            return ProveedorDB.traerProveedores_Direccion_Telefono();
+        }
+
+        public void updateProveedor()
+        {
+            ProveedorDB.updateProveedor(this.id, this.nombre, this.es_minorista, this.porcentage_ganancia, this.dni, this.cuit, this.ibb);
         }
     }
 }
