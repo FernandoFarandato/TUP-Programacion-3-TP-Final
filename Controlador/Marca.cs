@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Controlador
 {
@@ -33,6 +35,25 @@ namespace Controlador
             this.id = id;
         }
 
+        public void crearMarca()
+        {
+            MarcaDB.crearMarca(this.nombre_marca, this.descripcion_marca);
+        }
+
+        public void eliminarMarca()
+        {
+            MarcaDB.eliminarMarca(this.id);
+        }
+
+        public void updateMarca()
+        {
+            MarcaDB.updateMarca(this.id, this.nombre_marca, this.descripcion_marca);
+        }
+
+        public static DataTable traerMarcas()
+        {
+            return MarcaDB.traerMarcas();
+        }
 
     }
 }

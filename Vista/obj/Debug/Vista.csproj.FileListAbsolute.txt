@@ -29,3 +29,4 @@ C:\Users\ferfa\Documents\GitHub\TUP-Programacion 3\TUP-Programacion-3-TP-Final\V
 C:\Users\ferfa\Documents\GitHub\TUP-Programacion 3\TUP-Programacion-3-TP-Final\Vista\obj\Debug\Vista.exe
 C:\Users\ferfa\Documents\GitHub\TUP-Programacion 3\TUP-Programacion-3-TP-Final\Vista\obj\Debug\Vista.pdb
 C:\Users\ferfa\Documents\GitHub\TUP-Programacion 3\TUP-Programacion-3-TP-Final\Vista\obj\Debug\Vista.Frm_marcas.resources
+C:\Users\ferfa\Documents\GitHub\TUP-Programacion 3\TUP-Programacion-3-TP-Final\Vista\obj\Debug\Vista.Frm_Productos.resources
