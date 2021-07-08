@@ -1,0 +1,126 @@
+use mydb;
+
+# Carga de Usuario
+
+INSERT INTO `mydb`.`usuarios`
+(`username`, `password`)
+VALUES ('fernando', 'admin');
+
+# Carga de Proveedor
+
+# Proveedor 1
+INSERT INTO `mydb`.`proveedores`
+(`id`, `nombre`,`es_minorista`, `dni`, `porcentage_ganancia`, `cuit`, `ibb`)
+VALUES ('90','Gilberto', '1', '11212843', '5', '', '');
+
+# Proveedor 2
+INSERT INTO `mydb`.`proveedores`
+(`id`, `nombre`,`es_minorista`, `dni`, `porcentage_ganancia`, `cuit`, `ibb`)
+VALUES ('95','Santillan S.A', '0', '', '5', '20-3285912', '120000');
+
+# Proveedor 3
+INSERT INTO `mydb`.`proveedores`
+(`id`, `nombre`,`es_minorista`, `dni`, `porcentage_ganancia`, `cuit`, `ibb`)
+VALUES ('98','Susana', '1', '43212843', '5', '', '');
+
+# Carga de Direccion
+
+# Carga de Direccion - Proveedor 1
+INSERT INTO `mydb`.`direcciones`
+(`id`, `calle`, `numero`, `cuidad`, `provincia`, `proveedores_id`)
+VALUES('83','Guemes', '342', 'Rafaela', 'Santa Fe', '90');
+
+# Carga de Direccion - Proveedor 2
+INSERT INTO `mydb`.`direcciones`
+(`id`, `calle`, `numero`, `cuidad`, `provincia`, `proveedores_id`)
+VALUES('84','Sarmiento', '912', 'Rafaela', 'Santa Fe', '95');
+
+# Carga de Direccion - Proveedor 3
+INSERT INTO `mydb`.`direcciones`
+(`id`, `calle`, `numero`, `cuidad`, `provincia`, `proveedores_id`)
+VALUES('85','Suipacha', '105', 'Rafaela', 'Santa Fe', '98');
+
+# Carga de Telefono
+
+# Carga de Telefono - Proveedor 1
+INSERT INTO `mydb`.`telefonos`
+(`id`, `numero_contacto`, `proveedores_id`)
+VALUES ('78', '3492626185', '90');
+
+# Carga de Telefono - Proveedor 2
+INSERT INTO `mydb`.`telefonos`
+(`id`, `numero_contacto`, `proveedores_id`)
+VALUES ('79', '3492957318', '95');
+
+# Carga de Telefono - Proveedor 3
+INSERT INTO `mydb`.`telefonos`
+(`id`, `numero_contacto`, `proveedores_id`)
+VALUES ('80', '3482759157', '98');
+
+# Carga de Marca
+
+# Marca 1
+INSERT INTO `mydb`.`marcas`
+(`id_marcas`, `nombre_marca`, `descripcion_marca`)
+VALUES ('54', 'Alcatel', 'Marca de celulares alcatel');
+
+# Marca 1
+INSERT INTO `mydb`.`marcas`
+(`id_marcas`, `nombre_marca`, `descripcion_marca`)
+VALUES ('55', 'Apple', 'Marca de celulares Apple');
+
+# Marca 1
+INSERT INTO `mydb`.`marcas`
+(`id_marcas`, `nombre_marca`, `descripcion_marca`)
+VALUES ('56', 'Samsung', 'Marca de celulares Samsung');
+
+# Carga de Producto
+
+# Producto 1
+INSERT INTO `mydb`.`productos`
+(`id_productos`, `nombre_productos`, `descripcion_productos`, `marcas_id`)
+VALUES ('78', 'Alc 5 Plus', 'Alcatel Alc 5 Plus 64Gb', '54');
+
+# Producto 2
+INSERT INTO `mydb`.`productos`
+(`id_productos`, `nombre_productos`, `descripcion_productos`, `marcas_id`)
+VALUES ('79', 'Galaxy S10', 'Samsung Galaxy S10 128Gb', '56');
+
+# Producto 3
+INSERT INTO `mydb`.`productos`
+(`id_productos`, `nombre_productos`, `descripcion_productos`, `marcas_id`)
+VALUES ('80', 'iPhone 8 Plus', 'iPhone 8 Plus', '55');
+
+# Carga de Precio
+
+# Carga de Precio - Producto 1
+INSERT INTO `mydb`.`precio`
+(`id`, `precio`, `productos_id`)
+VALUES ('67', '45000', '78');
+
+# Carga de Precio - Producto 2
+INSERT INTO `mydb`.`precio`
+(`id`, `precio`, `productos_id`)
+VALUES ('68', '85000', '79');
+
+# Carga de Precio - Producto 3
+INSERT INTO `mydb`.`precio`
+(`id`, `precio`, `productos_id`)
+VALUES ('69', '95000', '80');
+
+# Carga de Relacion entre Producto y Proveedor
+
+# Carga de Relacion entre Producto y Proveedor - Producto 1
+INSERT INTO `mydb`.`proveedores_has_productos`
+(`proveedores_id`, `productos_id`)
+VALUES ('90', '78');
+
+# Carga de Relacion entre Producto y Proveedor - Producto 2
+INSERT INTO `mydb`.`proveedores_has_productos`
+(`proveedores_id`, `productos_id`)
+VALUES ('95', '79');
+
+# Carga de Relacion entre Producto y Proveedor - Producto 3
+INSERT INTO `mydb`.`proveedores_has_productos`
+(`proveedores_id`, `productos_id`)
+VALUES ('98', '80');
